@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "6a7da85b-5b7e-40c1-a3a7-c9b422828fb6",
+		"name": "sc-training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sc-training",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "clientId",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"grant_type\": \"password\", \n \"user\": \"user\",\n \"password\": \"pass\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9000/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"testUser\",\n\t\"email\": \"testUser@test.com\",\n\t\"password\": \"testUser\",\n\t\"roles\": [\"user\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"testUser\",\n\t\"password\": \"{noop}testUser\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ0ZXN0VXNlciIsInNjb3BlIjpbIm1lbWJlclNlcnZpY2UiXSwiZXhwIjoxNTkxNTQyODM5LCJ0b2tlblR5cGUiOiJtZW1iZXIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiNzZhZGNlYmUtNzlhYi00ODJjLWE2N2YtOTAwNmE1MjM2M2VkIiwiY2xpZW50X2lkIjoibWVtYmVyU2VydmljZSIsIm1lbWJlcklkIjo3fQ.RIwlS5_OO_aNnOd0tMjPqkfuhj52KbFZCCGJEYQLI5tzJitB8pdl66P4rxCiLwLj1bfal30EsXjd5tqFm3qWAraNvLHNryQxlRPHkyfoVslZIYLuarMm9ZxTblhsEnj1fhV_EKyF7J_FaPGGbJydCQ9FXGcPHU6xwxIW4D8ThuCXilh4PSMZ_qP81r1J__9J1zj5GWNtAnwflyxcoMiITEfasFf1XAZ33DidIYvub0ufxyKp4w4ysDYWgqBaatI-OXe4Z96UXdXf-2CSt1cVCvXjcBost9GIX91EQI2tH-uOqNIvmlzQrR1AiAxxKdp0enDEyFr-3IO3FNntPFrBWQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"apollo\",\n\t\"password\": \"apollo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9091/api/test/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"test",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resources notes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ0ZXN0VXNlciIsInNjb3BlIjpbIm1lbWJlclNlcnZpY2UiXSwiZXhwIjoxNTkxNTQyODM5LCJ0b2tlblR5cGUiOiJtZW1iZXIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiNzZhZGNlYmUtNzlhYi00ODJjLWE2N2YtOTAwNmE1MjM2M2VkIiwiY2xpZW50X2lkIjoibWVtYmVyU2VydmljZSIsIm1lbWJlcklkIjo3fQ.RIwlS5_OO_aNnOd0tMjPqkfuhj52KbFZCCGJEYQLI5tzJitB8pdl66P4rxCiLwLj1bfal30EsXjd5tqFm3qWAraNvLHNryQxlRPHkyfoVslZIYLuarMm9ZxTblhsEnj1fhV_EKyF7J_FaPGGbJydCQ9FXGcPHU6xwxIW4D8ThuCXilh4PSMZ_qP81r1J__9J1zj5GWNtAnwflyxcoMiITEfasFf1XAZ33DidIYvub0ufxyKp4w4ysDYWgqBaatI-OXe4Z96UXdXf-2CSt1cVCvXjcBost9GIX91EQI2tH-uOqNIvmlzQrR1AiAxxKdp0enDEyFr-3IO3FNntPFrBWQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"apollo\",\n\t\"password\": \"apollo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9091/resources",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"resources"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
