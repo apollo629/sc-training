@@ -1,0 +1,13 @@
+
+security:
+  jwt:
+    public-key: classpath:public-key.txt
+server:
+  port: 9091
+
+
+spring:
+  datasource:
+     url: jdbc:postgresql://localhost:5432/sc_training_db?currentSchema=sc_member
+     username: dba_user
+     password: dba_password
