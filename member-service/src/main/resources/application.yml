@@ -1,0 +1,39 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: member-service
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sc_training_db?currentSchema=sc_member
+    username: dba_user
+    password: dba_password
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+management:
+  endpoint:
+    routes:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+
+authServer:
+  header:
+  tokenUrl: oauth/token
+  serviceName: auth-server
+
